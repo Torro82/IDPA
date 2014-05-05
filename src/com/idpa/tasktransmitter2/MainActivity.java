@@ -46,11 +46,11 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	public void sendMessage(View view) {
-		if(Task.size()!=0) {
+		if(Task.size()!=0 && Numbers.size()!=0) {
 			String allTasks = ""; 
 			for (int i = 0; i < Task.size(); i++) {
 				int j = i+1;
-				allTasks= (allTasks+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_date_"+i, "Nox exists")+" / "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_subject_"+i, "Nox exists")+"\n"+"     "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_task_"+i, "Nox exists")+"\n"+"\n");
+				allTasks= (allTasks+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_date_"+i, "Nox exists")+" / "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_subject_"+i, "Nox exists")+"\n"+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_task_"+i, "Nox exists")+"\n"+"\n");
 			}
 			SmsManager manager = SmsManager.getDefault();
 			
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 			Toast.makeText(getApplicationContext(), "sending "+array_size+" SMS...", Toast.LENGTH_SHORT).show();
 		} 
 		else {
-			Toast.makeText(getApplicationContext(), "You dont't have any tasks...", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "You don't have any tasks or contacts...", Toast.LENGTH_SHORT).show();
 		}
 	}
     public void addNumber(View view) {

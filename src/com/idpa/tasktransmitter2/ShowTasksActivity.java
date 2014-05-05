@@ -18,7 +18,7 @@ public class ShowTasksActivity extends Activity {
 		int size = MainActivity.Task.size();
 		for (int i = 0; i < size; i++) {
 			int j = i+1;
-			list.setText(list.getText()+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_date_"+i, "Nox exists")+" / "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_subject_"+i, "Nox exists")+"\n"+"     "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_task_"+i, "Nox exists")+"\n"+"\n");
+			list.setText(list.getText()+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_date_"+i, "Nox exists")+" / "+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_subject_"+i, "Nox exists")+"\n"+ HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_task_"+i, "Nox exists")+"\n"+"\n");
 		}
 		if(list.getText().equals("")) {
 			Toast.makeText(getApplicationContext(), "You don't have any tasks...", Toast.LENGTH_SHORT).show();
