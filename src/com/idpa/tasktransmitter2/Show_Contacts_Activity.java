@@ -18,7 +18,7 @@ public class Show_Contacts_Activity extends Activity {
 		int size = MainActivity.NamesAndNumbers.size();
 		for (int i = 0; i < size; i++) {
 			int j = i+1;
-			list.setText(list.getText()+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_NAN_"+i, "Nox exists")+"\n");
+			list.setText(list.getText()+Integer.toString(j)+". " + HelperSharedPreferences.getSharedPreferencesString(getApplicationContext(),"index_NAN_"+i, "Not exists")+"\n");
 		}
 		if(list.getText().equals("")) {
 			Toast.makeText(getApplicationContext(), "You don't have any contacts...", Toast.LENGTH_SHORT).show();
